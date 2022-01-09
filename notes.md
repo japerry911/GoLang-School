@@ -43,3 +43,17 @@
   ```go
   const value = true
   ```
+- for loop
+  - three components
+    1. init statement, executed before first iteration
+    2. condition expression, evaluated before every iteration
+    3. post statement, executed at the end of every iteration
+    - init and post statements are optional
+      - example
+      ```go
+      for ; sum < 1000; {
+        sum += sum
+      }
+      ```
+      - doesn't need semi-colons either, turns into `while` essentially
+    - if it's just `for {}` then it will run forever
