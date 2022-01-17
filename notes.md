@@ -62,3 +62,20 @@
   - A defer statement defers the execution of a function until the surrounding function returns.
   - The deferred call's arguments are evaluated immediately, but the function call is not executed until the surrounding function returns.
   - Deferred function calls are pushed onto a stack. When a function returns, its deferred calls are executed in last-in-first-out order.
+
+- pointers
+
+  - `var p *int`
+    - pointer to integer value, zero-value = `nil`
+  - the `*` operator denotes the pointer's underlying value
+    ```go
+      fmt.Println(*p) // read i through the pointer p
+      *p = 21         // set i through the pointer p
+    ```
+    - known as derefrencing or indirecting
+
+- arrays
+  - The type [n]T is an array of n values of type T.
+  - var a [10]int
+    - declares a variable a as an array of ten integers.
+  - An array's length is part of its type, so arrays cannot be resized. This seems limiting, but don't worry; Go provides a convenient way of working with arrays.
