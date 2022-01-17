@@ -118,3 +118,8 @@
     - The first parameter s of append is a slice of type T, and the rest are T values to append to the slice.
     - The resulting value of append is a slice containing all the elements of the original slice plus the provided values.
     - If the backing array of s is too small to fit all the given values a bigger array will be allocated. The returned slice will point to the newly allocated array.
+
+- maps
+  - A map maps keys to values.
+  - The zero value of a map is nil. A nil map has no keys, nor can keys be added.
+  - The make function returns a map of the given type, initialized and ready for use.
