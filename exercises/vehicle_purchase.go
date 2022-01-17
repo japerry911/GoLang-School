@@ -7,12 +7,11 @@ func NeedsLicense(kind string) bool {
 
 // ChooseVehicle recommends a vehicle for selection. It always recommends the vehicle that comes first in dictionary order.
 func ChooseVehicle(option1, option2 string) string {
-    chosenOption := option1
-	if option1 >= option2 {
-        chosenOption = option2
+	if chosenOption := option2; option1 >= option2 {
+        return chosenOption + " is clearly the better choice."
+    } else {
+    	return option1 + " is clearly the better choice."
     }
-
-    return chosenOption + " is clearly the better choice."
 }
 
 // CalculateResellPrice calculates how much a vehicle can resell for at a certain age.
