@@ -75,7 +75,46 @@
     - known as derefrencing or indirecting
 
 - arrays
+
   - The type [n]T is an array of n values of type T.
   - var a [10]int
     - declares a variable a as an array of ten integers.
   - An array's length is part of its type, so arrays cannot be resized. This seems limiting, but don't worry; Go provides a convenient way of working with arrays.
+
+- slices
+
+  - dynamically-sized, flexible view into the elements of an array. In practice, slices are much more common than arrays.
+  - The type []T is a slice with elements of type T.
+  - A slice is formed by specifying two indices, a low and high bound, separated by a colon:
+    - a[low : high]
+      - This selects a half-open range which includes the first element, but excludes the last one.
+  - length & capacity
+    - length
+      - number of elements it contains
+      - `len()`
+    - capacity
+      - the number of elements in the underlying array, counting from the first element in the slice.
+      - `cap()`
+  - The zero value of a slice is `nil`
+  - using `make` command
+
+    - this is how you create dynamically-sized arrays.
+    - The make function allocates a zeroed array and returns a slice that refers to that array:
+      ```go
+        a := make([]int, 5)  // len(a)=5
+      ```
+    - To specify a capacity, pass a third argument to make:
+
+      ```go
+        b := make([]int, 0, 5) // len(b)=0, cap(b)=5
+
+        b = b[:cap(b)] // len(b)=5, cap(b)=5
+        b = b[1:]      // len(b)=4, cap(b)=4
+      ```
+
+  - `append` command
+    - It is common to append new elements to a slice, and so Go provides a built-in append function. The documentation of the built-in package describes append.
+      - `func append(s []T, vs ...T) []T`
+    - The first parameter s of append is a slice of type T, and the rest are T values to append to the slice.
+    - The resulting value of append is a slice containing all the elements of the original slice plus the provided values.
+    - If the backing array of s is too small to fit all the given values a bigger array will be allocated. The returned slice will point to the newly allocated array.
