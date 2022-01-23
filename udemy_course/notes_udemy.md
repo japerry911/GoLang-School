@@ -8,3 +8,10 @@
 - pointer rules
   - turn `address` into `value` with `*address`
   - turn `value` into `address` with `&value`
+- interface
+  ```go
+    type bot interface {
+      getGreeting() string
+    }
+  ```
+  - everything with `getGreeting` method that returns `string` is type `bot` interface
