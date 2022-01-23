@@ -7,5 +7,5 @@ func main() {
 	fmt.Printf("DNA Passed? %v\n", dnaResult == "TAACG")
 
 	mumblingResult := Accum("abCd")
-	fmt.Printf("Mumbling Passed? %v\n", mumblingResult == "abbCCCdddd")
+	fmt.Printf("Mumbling Passed? %v\n", mumblingResult == "A-Bb-Ccc-Dddd")
 }
