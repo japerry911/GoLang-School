@@ -17,5 +17,7 @@ func main() {
 	a2 := []string{"cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"}
 	maxLengthDifferenceResult := MxDifLg(a1, a2)
 	fmt.Printf("MaxLengthDifference Passing? %v\n", maxLengthDifferenceResult == 13)
-	fmt.Println(maxLengthDifferenceResult)
+
+	createPhoneNumberResult := CreatePhoneNumber([10]uint{1, 2, 3, 4, 5, 6, 7, 8, 9, 0})
+	fmt.Printf("CreatePhoneNumber Passing? %v\n", createPhoneNumberResult == "(123) 456-7890")
 }
