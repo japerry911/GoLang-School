@@ -8,4 +8,7 @@ func main() {
 
 	mumblingResult := Accum("abCd")
 	fmt.Printf("Mumbling Passed? %v\n", mumblingResult == "A-Bb-Ccc-Dddd")
+
+	positiveSumResult := PositiveSum([]int{-1, 2, 3, 4, -5})
+	fmt.Printf("PositiveSum Passing? %v\n", positiveSumResult == 9)
 }
